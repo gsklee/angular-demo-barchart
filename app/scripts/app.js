@@ -1,13 +1,20 @@
 'use strict';
 
-angular.module('angularDemoBarchartApp', [])
-  .config(function ($routeProvider) {
+angular.module('angularDemoBarchartApp', [
+    'ngRoute'
+]).
+
+config(function(
     $routeProvider
-      .when('/', {
+){
+    $routeProvider.
+
+    when('/', {
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
-      })
-      .otherwise({
+    }).
+
+    otherwise({
         redirectTo: '/'
-      });
-  });
+    });
+});
