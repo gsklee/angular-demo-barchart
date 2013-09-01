@@ -3,10 +3,7 @@
 angular.module('angularDemoBarchartApp').
 
 controller('MainCtrl', function(
+    $resource
 ){
-    this.awesomeThings = [
-        'HTML5 Boilerplate',
-        'AngularJS',
-        'Karma'
-    ];
+    this.resource = $resource('/data/taiwan-percentage-of-young-population.json').query();
 });
