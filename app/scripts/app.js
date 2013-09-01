@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('angularDemoBarchartApp', [
-    'ngRoute'
+    'ngRoute',
+    'ngResource'
 ]).
 
 config(function(
