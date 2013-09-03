@@ -20,3 +20,18 @@ body {
     line-height: 1;
     letter-spacing: -1px;
 }
+
+footer {
+    background: -moz-linear-gradient(-45deg, rgba(125, 125, 125, 0.8), rgba(14, 14, 14, 1));
+    background: -webkit-linear-gradient(-45deg, rgba(125, 125, 125, 0.8), rgba(14, 14, 14, 1));
+    background: linear-gradient(135deg, rgba(125, 125, 125, 0.8), rgba(14, 14, 14, 1));
+}
+
+.control-group {
+    display: inline-block;
+    margin: 20px;
+}
+
+.control-label {
+    color: #eee;
+}
