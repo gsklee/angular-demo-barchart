@@ -1,18 +1,12 @@
 <div class="hero-unit" ng-repeat="data in main.resource | filter: main.filter">
     <h1>{{data.year}}</h1>
     <pre>{{data.regions}}</pre>
+    <pre>{{(main.resource2 | filter: main.filter)[0].regions}}</pre>
 </div>
 
 <footer class="text-right navbar navbar-fixed-bottom form-inline">
     <div class="form-inline-control-group">
         <label>Year:</label>
-
-        <!--
-        ---- This won't work because `main.resource` is likely still unresolved when the assignment happens:
-        ----
-        ---- <select ng-init="main.filter.year = main.resource[main.resource.length - 1].year" ng-model="main.filter.year" ng-options="data.year as data.year for data in main.resource"></select>
-        --->
-
         <select ng-model="main.filter.year" ng-options="data.year as data.year for data in main.resource"></select>
     </div>
 </footer>
