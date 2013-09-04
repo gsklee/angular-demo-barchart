@@ -6,6 +6,7 @@ controller('MainCtrl', function(
     $resource
 ){
     this.resource = $resource('/data/taiwan-percentage-of-young-population.json').query();
+    this.resource2 = $resource('/data/taiwan-percentage-of-working-population.json').query();
 
     this.resource.$promise.then(function(data) {
         this.filter = {
