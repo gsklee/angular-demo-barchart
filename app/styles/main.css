@@ -21,6 +21,10 @@ body {
     letter-spacing: -1px;
 }
 
+code {
+    display: block;
+}
+
 footer {
     background: -moz-linear-gradient(-45deg, rgba(125, 125, 125, 0.8), rgba(14, 14, 14, 1));
     background: -webkit-linear-gradient(-45deg, rgba(125, 125, 125, 0.8), rgba(14, 14, 14, 1));

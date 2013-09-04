@@ -1,6 +1,8 @@
 <div class="hero-unit" ng-repeat="data in main.resource | filter: main.filter">
     <h1>{{data.year}}</h1>
-    <pre>{{data.regions}}</pre>
+    <div>
+        <code ng-repeat="region in data.regions">{{region}}</code>
+    </div>
 </div>
 
 <footer class="text-right navbar navbar-fixed-bottom form-inline">
