@@ -1,7 +1,15 @@
 <div class="hero-unit" ng-repeat="data in main.resource | filter: main.filter">
     <h1>{{data.year}}</h1>
-    <pre>{{data.regions}}</pre>
-    <pre>{{(main.resource2 | filter: main.filter)[0].regions}}</pre>
+    <div class="row">
+        <div class="span4">
+            <h2>幼年人口比率</h2>
+            <code ng-repeat="region in data.regions">{{region}}</code>
+        </div>
+        <div class="span4">
+            <h2>青壯年人口比率</h2>
+            <code ng-repeat="region in (main.resource2 | filter: main.filter)[0].regions">{{region}}</code>
+        </div>
+    </div>
 </div>
 
 <footer class="text-right navbar navbar-fixed-bottom form-inline">
