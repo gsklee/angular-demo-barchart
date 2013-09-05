@@ -21,9 +21,61 @@ body {
     letter-spacing: -1px;
 }
 
+/*
+// Charting Area
+*/
+
+.chart-canvas {
+    background: rgba(255, 255, 255, 0.4);
+    padding: 3px;
+}
+
+.chart-row {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+}
+
+.chart-row-label {
+    position: absolute;
+    font-size: 10px;
+    line-height: 12px;
+    color: #eee;
+}
+
+.chart-bar-young,
+.chart-bar-working,
+.chart-bar-elderly {
+    display: inline-block;
+    margin: 1px 0;
+    height: 10px;
+}
+
+.chart-bar-young {
+    background: -moz-linear-gradient(-45deg, #00addb, #0092b9);
+    background: -webkit-linear-gradient(-45deg, #00addb, #0092b9);
+    background: linear-gradient(135deg, #00addb, #0092b9);
+}
+
+.chart-bar-working {
+    background: -moz-linear-gradient(-45deg, #9bc800, #86ad00);
+    background: -webkit-linear-gradient(-45deg, #9bc800, #86ad00);
+    background: linear-gradient(135deg, #9bc800, #86ad00);
+}
+
+.chart-bar-elderly {
+    background: -moz-linear-gradient(-45deg, #ffc517, #f2b705);
+    background: -webkit-linear-gradient(-45deg, #ffc517, #f2b705);
+    background: linear-gradient(135deg, #ffc517, #f2b705);
+}
+
 code {
     display: block;
 }
+
+/*
+// Footer 
+*/
 
 footer {
     background: -moz-linear-gradient(-45deg, rgba(125, 125, 125, 0.8), rgba(14, 14, 14, 1));
@@ -37,6 +89,6 @@ footer {
     padding: 20px;
 }
 
-label {
+.form-inline-control-label {
     margin-right: 20px;
 }
