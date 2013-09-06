@@ -46,6 +46,9 @@ body {
 .chart-bar-young,
 .chart-bar-working,
 .chart-bar-elderly {
+    -webkit-transition: 0.2s linear;
+    transition: 0.2s linear;
+
     display: inline-block;
     margin: 1px 0;
     height: 10px;
