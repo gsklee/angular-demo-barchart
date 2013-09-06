@@ -8,7 +8,10 @@ factory('Data', function(
 ){
     return {
         retrieve: function(name) {
-            var _result = [];
+            var _result = [],
+                _deferred = $q.defer();
+
+            _result.$promise = _deferred.promise;
 
             switch (name) {
                 case 'age-structure':
@@ -26,6 +29,8 @@ factory('Data', function(
 
                             _result.push(data);
                         });
+
+                        _deferred.resolve(_result);
                     });
 
                     break;
