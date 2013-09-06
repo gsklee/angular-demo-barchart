@@ -1,5 +1,18 @@
 <div class="hero-unit" ng-repeat="data in main.resource | filter: main.filter.year">
     <h1>{{data.year}}</h1>
+    <hr>
+    <h2>Bar Chart</h2>
+    <div class="chart-canvas">
+        <div class="chart-row" ng-repeat="region in data.regions | filter: main.filter.regions">
+            <label class="chart-row-label">{{region.name}}</label>
+            <div class="chart-bar-young" style="width: {{region.value}}%"></div>
+
+            <!--
+            ---- It's very difficult to draw the rest 2 bars here if we don't integrate the data sources
+            --->
+        </div>
+    </div>
+    <hr>
     <div class="row">
         <div class="span4">
             <h2>幼年人口比率</h2>
