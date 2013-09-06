@@ -1,4 +1,4 @@
-<div class="hero-unit" ng-repeat="data in main.resource | filter: main.filter.year">
+<div class="hero-unit" ng-repeat="data in main.resource | startFrom: main.filter.startFrom | limitTo: 1">
     <h1>{{data.year}}</h1>
     <div class="chart-canvas">
         <div class="chart-row" ng-repeat="region in data.regions | filter: main.filter.regions">
@@ -11,10 +11,6 @@
 </div>
 
 <footer class="text-right navbar navbar-fixed-bottom form-inline">
-    <div class="form-inline-control-group">
-        <label class="form-inline-control-label">Year:</label>
-        <select ng-model="main.filter.year" ng-options="data.year as data.year for data in main.resource"></select>
-    </div>
     <div class="form-inline-control-group">
         <label class="form-inline-control-label">Region:</label>
         <select ng-model="main.filter.regions" ng-options="region.name as region.name for region in main.resource[0].regions">
