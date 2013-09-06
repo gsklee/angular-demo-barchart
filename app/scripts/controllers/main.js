@@ -3,10 +3,9 @@
 angular.module('angularDemoBarchartApp').
 
 controller('MainCtrl', function(
-    $resource
+    Data
 ){
-    this.resource = $resource('/data/taiwan-percentage-of-young-population.json').query();
-    this.resource2 = $resource('/data/taiwan-percentage-of-working-population.json').query();
+    this.resource = Data.retrieve('age-structure');
 
     this.resource.$promise.then(function(data) {
         this.filter = {
