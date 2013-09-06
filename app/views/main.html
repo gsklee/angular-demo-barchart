@@ -1,7 +1,7 @@
-<div class="hero-unit" ng-repeat="data in main.resource | startFrom: main.filter.startFrom | limitTo: 1">
-    <h1>{{data.year}}</h1>
+<div class="hero-unit" ng-init="main.tick = 0">
+    <h1>{{main.resource[main.tick].year}}</h1>
     <div class="chart-canvas">
-        <div class="chart-row" ng-repeat="region in data.regions | filter: main.filter.regions">
+        <div class="chart-row" ng-repeat="region in main.resource[main.tick].regions | filter: main.filter.regions">
             <label class="chart-row-label">{{region.name}}</label>
             <div class="chart-bar-young" style="width: {{region['young%']}}%"></div>
             <div class="chart-bar-working" style="width: {{region['working%']}}%"></div>
