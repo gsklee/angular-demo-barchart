@@ -4,6 +4,10 @@ body {
     color: #333;
 }
 
+ng-view {
+    display: block;
+}
+
 .hero-unit {
     margin: 50px auto 0 auto;
     width: 620px;
