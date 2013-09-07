@@ -2,7 +2,8 @@
 
 angular.module('angularDemoBarchartApp', [
     'ngRoute',
-    'ngResource'
+    'ngResource',
+    'ngAnimate'
 ]).
 
 config(function(
