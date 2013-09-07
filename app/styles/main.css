@@ -72,6 +72,17 @@ body {
     background: linear-gradient(135deg, #ffc517, #f2b705);
 }
 
+.chart-row.ng-enter {
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+
+    width: 0%;
+}
+
+.chart-row.ng-enter-active {
+    width: 100%;
+}
+
 code {
     display: block;
 }
