@@ -10,17 +10,13 @@ controller('MainCtrl', function(
 
     this.resource = Data.retrieve('age-structure');
 
-    this.filter = {
-        startFrom: 0
-    };
-
     this.resource.$promise.then(function(data) {
         (function _loop() {
             $timeout(function() {
-                _this.filter.startFrom = (_this.filter.startFrom + 1) % data.length;
+                _this.tick = (_this.tick + 1) % data.length;
 
                 _loop();
-            }, 1000);
+            }, 200);
         })();
     });
 });
