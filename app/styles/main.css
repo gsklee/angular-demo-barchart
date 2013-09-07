@@ -72,14 +72,23 @@ body {
     background: linear-gradient(135deg, #ffc517, #f2b705);
 }
 
-.chart-row.ng-enter {
+.chart-row.ng-enter,
+.chart-row.ng-leave {
     -webkit-transition: 0.2s;
     transition: 0.2s;
+}
 
+/*
+// Using `.chart-row.ng-leave-active` only will have specificity issue
+*/
+
+.chart-row.ng-enter,
+.chart-row.ng-leave.ng-leave-active {
     width: 0%;
 }
 
-.chart-row.ng-enter-active {
+.chart-row.ng-enter.ng-enter-active,
+.chart-row.ng-leave {
     width: 100%;
 }
 
