@@ -3,7 +3,11 @@
 angular.module('angularDemoBarchartApp').
 
 controller('MainCtrl', function(
+    $scope,
+    $window,
     $timeout,
+    $filter,
+    $resource,
     $localStorage,
     Data
 ){
@@ -11,6 +15,7 @@ controller('MainCtrl', function(
 
     this.resource = Data.retrieve('age-structure');
     this.regions = Data.retrieve('regions');
+    this.regionNamesHash = Data.retrieve('region-names-dictionary');
 
     this.$storage = $localStorage.$default({
         filter: {
@@ -32,5 +37,17 @@ controller('MainCtrl', function(
         return function(input) {
             return criteria.indexOf(input.name) > -1;
         };
+    };
+
+    this.geocoding = function() {
+        $scope.currentRegion = undefined;
+
+        $window.navigator.geolocation.getCurrentPosition(function(position) {
+            $resource('http://maps.googleapis.com/maps/api/geocode/json?sensor=false&latlng=' + position.coords.latitude + ',' + position.coords.longitude).get().$promise.then(function(geolocation) {
+                $scope.currentRegion = $filter('filter')(geolocation.results[0].address_components, {
+                    types: 'administrative_area_level_2'
+                })[0].long_name;
+            });
+        });
     };
 });

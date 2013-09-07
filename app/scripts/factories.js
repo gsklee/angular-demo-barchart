@@ -44,6 +44,13 @@ factory('Data', function(
                     });
 
                     break;
+                case 'region-names-dictionary':
+                    $resource('/data/taiwan-region-names-dictionary.json').get().$promise.then(function(response) {
+                        _result.push(response);
+                        _deferred.resolve(_result);
+                    });
+
+                    break;
             }
 
             return _result;

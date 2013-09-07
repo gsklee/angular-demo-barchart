@@ -4,7 +4,8 @@ angular.module('angularDemoBarchartApp', [
     'ngRoute',
     'ngResource',
     'ngAnimate',
-    'ngStorage'
+    'ngStorage',
+    'ui.keypress'
 ]).
 
 config(function(
