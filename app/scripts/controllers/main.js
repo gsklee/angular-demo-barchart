@@ -4,12 +4,19 @@ angular.module('angularDemoBarchartApp').
 
 controller('MainCtrl', function(
     $timeout,
+    $localStorage,
     Data
 ){
     var _this = this;
 
     this.resource = Data.retrieve('age-structure');
     this.regions = Data.retrieve('regions');
+
+    this.$storage = $localStorage.$default({
+        filter: {
+            regions: this.regions
+        }
+    });
 
     this.resource.$promise.then(function(data) {
         (function _loop() {

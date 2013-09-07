@@ -36,11 +36,33 @@ body {
     display: flex;
 }
 
-.chart-row-label {
-    position: absolute;
+.chart-row-label,
+.geohighlight {
     font-size: 10px;
     line-height: 12px;
+}
+
+.chart-row-label {
+    position: absolute;
     color: #eee;
+}
+
+.geohighlight::before,
+.geohighlight::after {
+    position: relative;
+    width: 0;
+    height: 0;
+    opacity: 0.6;
+}
+
+.geohighlight::before {
+    content: '▶';
+    left: -12px;
+}
+
+.geohighlight::after {
+    content: '◀';
+    left: 2px;
 }
 
 .chart-bar-young,

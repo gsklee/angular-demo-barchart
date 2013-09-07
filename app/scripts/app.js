@@ -3,7 +3,8 @@
 angular.module('angularDemoBarchartApp', [
     'ngRoute',
     'ngResource',
-    'ngAnimate'
+    'ngAnimate',
+    'ngStorage'
 ]).
 
 config(function(

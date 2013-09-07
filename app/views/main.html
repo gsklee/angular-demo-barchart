@@ -1,7 +1,7 @@
 <div class="hero-unit" ng-init="main.tick = 0">
     <h1>{{main.resource[main.tick].year}}</h1>
     <div class="chart-canvas">
-        <div class="chart-row" ng-repeat="region in main.resource[main.tick].regions | filter: main.whitelist(main.filter.regions)">
+        <div class="chart-row" ng-repeat="region in main.resource[main.tick].regions | filter: main.whitelist(main.$storage.filter.regions)">
             <label class="chart-row-label">{{region.name}}</label>
             <div class="chart-bar-young" style="width: {{region['young%']}}%"></div>
             <div class="chart-bar-working" style="width: {{region['working%']}}%"></div>
@@ -13,6 +13,6 @@
 <footer class="text-right navbar navbar-fixed-bottom form-inline">
     <div class="form-inline-control-group">
         <label class="form-inline-control-label">Region:</label>
-        <select multiple="multiple" ng-model="main.filter.regions" ng-init="main.filter.regions = main.regions" ng-options="region as region for region in main.regions"></select>
+        <select multiple="multiple" ng-model="main.$storage.filter.regions" ng-options="region as region for region in main.regions"></select>
     </div>
 </footer>
