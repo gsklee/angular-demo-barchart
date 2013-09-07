@@ -9,6 +9,7 @@ controller('MainCtrl', function(
     var _this = this;
 
     this.resource = Data.retrieve('age-structure');
+    this.regions = Data.retrieve('regions');
 
     this.resource.$promise.then(function(data) {
         (function _loop() {
@@ -19,4 +20,10 @@ controller('MainCtrl', function(
             }, 200);
         })();
     });
+
+    this.whitelist = function(criteria) {
+        return function(input) {
+            return criteria.indexOf(input.name) > -1;
+        };
+    };
 });

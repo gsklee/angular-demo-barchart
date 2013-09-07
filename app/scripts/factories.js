@@ -34,6 +34,16 @@ factory('Data', function(
                     });
 
                     break;
+                case 'regions':
+                    $resource('/data/taiwan-percentage-of-young-population.json').query().$promise.then(function(response) {
+                        angular.forEach(response[0].regions, function(region) {
+                            _result.push(region.name);
+                        });
+
+                        _deferred.resolve(_result);
+                    });
+
+                    break;
             }
 
             return _result;
