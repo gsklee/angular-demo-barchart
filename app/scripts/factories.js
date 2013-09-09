@@ -16,8 +16,8 @@ factory('Data', function(
             switch (name) {
                 case 'age-structure':
                     $q.all([
-                        $resource('/data/taiwan-percentage-of-young-population.json').query().$promise,
-                        $resource('/data/taiwan-percentage-of-working-population.json').query().$promise
+                        $resource('./data/taiwan-percentage-of-young-population.json').query().$promise,
+                        $resource('./data/taiwan-percentage-of-working-population.json').query().$promise
                     ]).then(function(response) {
                         angular.forEach(response[0], function(data, k1) {
                             angular.forEach(data.regions, function(region, k2) {
@@ -35,7 +35,7 @@ factory('Data', function(
 
                     break;
                 case 'regions':
-                    $resource('/data/taiwan-percentage-of-young-population.json').query().$promise.then(function(response) {
+                    $resource('./data/taiwan-percentage-of-young-population.json').query().$promise.then(function(response) {
                         angular.forEach(response[0].regions, function(region) {
                             _result.push(region.name);
                         });
@@ -45,7 +45,7 @@ factory('Data', function(
 
                     break;
                 case 'region-names-dictionary':
-                    $resource('/data/taiwan-region-names-dictionary.json').get().$promise.then(function(response) {
+                    $resource('./data/taiwan-region-names-dictionary.json').get().$promise.then(function(response) {
                         _result.push(response);
                         _deferred.resolve(_result);
                     });

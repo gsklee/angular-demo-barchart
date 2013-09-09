@@ -17,12 +17,12 @@ config(function(
     $routeProvider.
 
     when('/', {
-        templateUrl: './views/main.html',
+        templateUrl: 'views/main.html',
         controller: 'MainCtrl as main'
     }).
 
     when('/end', {
-        templateUrl: './views/end.html'
+        templateUrl: 'views/end.html'
     }).
 
     otherwise({
