@@ -9,16 +9,7 @@ controller('MainCtrl', function(
 ){
     var _this = this;
 
-    this.resource = Data.retrieve('age-structure');
-    this.regions = Data.retrieve('regions');
-
-    this.$storage = $localStorage.$default({
-        filter: {
-            regions: this.regions
-        }
-    });
-
-    this.resource.$promise.then(function(data) {
+    (this.resource = Data.retrieve('age-structure')).$promise.then(function(data) {
         (function _loop() {
             $timeout(function() {
                 _this.tick = (_this.tick + 1) % data.length;
@@ -26,6 +17,14 @@ controller('MainCtrl', function(
                 _loop();
             }, 200);
         })();
+    });
+
+    (this.regions = Data.retrieve('regions')).$promise.then(function(data) {
+        _this.$storage = $localStorage.$default({
+            filter: {
+                regions: data
+            }
+        });
     });
 
     this.whitelist = function(criteria) {
