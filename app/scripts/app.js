@@ -9,8 +9,11 @@ angular.module('angularDemoBarchartApp', [
 ]).
 
 config(function(
+    $locationProvider,
     $routeProvider
 ){
+    $locationProvider.html5Mode(true);
+
     $routeProvider.
 
     when('/', {
@@ -18,7 +21,18 @@ config(function(
         controller: 'MainCtrl as main'
     }).
 
+    when('/end', {
+        templateUrl: 'views/end.html'
+    }).
+
     otherwise({
         redirectTo: '/'
     });
+}).
+
+run(function(
+    $rootScope,
+    $location
+){
+    $rootScope.$location = $location;
 });

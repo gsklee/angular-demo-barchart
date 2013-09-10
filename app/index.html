@@ -11,9 +11,12 @@
         <!-- endbuild -->
     </head>
 
-    <body ng-app="angularDemoBarchartApp">
+    <body ng-app="angularDemoBarchartApp" ui-keydown="{
+        left: '$location.path(\'/\')',
+        right: '$location.path(\'/end\')'
+    }">
         <!-- Add your site or application content here -->
-        <div class="container" ng-view=""></div>
+        <ng-view class="container"></ng-view>
 
         <script src="components/angular/angular.js"></script>
 
