@@ -4,8 +4,26 @@ body {
     color: #333;
 }
 
-ng-view {
+.container {
     display: block;
+    position: absolute;
+    width: 100%;
+}
+
+.container.ng-enter,
+.container.ng-leave {
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+}
+
+.container.ng-enter,
+.container.ng-leave.ng-leave-active {
+    opacity: 0;
+}
+
+.container.ng-enter.ng-enter-active,
+.container.ng-leave {
+    opacity: 1;
 }
 
 .hero-unit {
